@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @vacante.title %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @vacante.address %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @vacante.salary %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vacante.description %>
+</p>
+
+<p>
+  <strong>Requirements:</strong>
+  <%= @vacante.requirements %>
+</p>
+
+<p>
+  <strong>Benefits:</strong>
+  <%= @vacante.benefits %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @vacante.schedule %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @vacante.category %>
+</p>
+
+<%= link_to 'Edit', edit_vacante_path(@vacante) %> |
+<%= link_to 'Back', vacantes_path %>

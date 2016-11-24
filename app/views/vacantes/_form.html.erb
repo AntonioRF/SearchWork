@@ -1,0 +1,49 @@
+<%= form_for(@vacante) do |f| %>
+  <% if @vacante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vacante.errors.count, "error") %> prohibited this vacante from being saved:</h2>
+
+      <ul>
+      <% @vacante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br>
+    <%= f.text_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :requirements %><br>
+    <%= f.text_area :requirements %>
+  </div>
+  <div class="field">
+    <%= f.label :benefits %><br>
+    <%= f.text_area :benefits %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule %><br>
+    <%= f.text_field :schedule %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

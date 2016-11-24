@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Vacantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Address</th>
+      <th>Salary</th>
+      <th>Description</th>
+      <th>Requirements</th>
+      <th>Benefits</th>
+      <th>Schedule</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vacantes.each do |vacante| %>
+      <tr>
+        <td><%= vacante.title %></td>
+        <td><%= vacante.address %></td>
+        <td><%= vacante.salary %></td>
+        <td><%= vacante.description %></td>
+        <td><%= vacante.requirements %></td>
+        <td><%= vacante.benefits %></td>
+        <td><%= vacante.schedule %></td>
+        <td><%= vacante.category %></td>
+        <td><%= link_to 'Show', vacante %></td>
+        <td><%= link_to 'Edit', edit_vacante_path(vacante) %></td>
+        <td><%= link_to 'Destroy', vacante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vacante', new_vacante_path %>
