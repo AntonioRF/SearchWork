@@ -13,6 +13,7 @@
       <th>Benefits</th>
       <th>Schedule</th>
       <th>Category</th>
+      <th>Creador</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,6 +29,7 @@
         <td><%= vacante.benefits %></td>
         <td><%= vacante.schedule %></td>
         <td><%= vacante.category %></td>
+        <td><%= vacante.company.email %></td>
         <td><%= link_to 'Show', vacante %></td>
         <td><%= link_to 'Edit', edit_vacante_path(vacante) %></td>
         <td><%= link_to 'Destroy', vacante, method: :delete, data: { confirm: 'Are you sure?' } %></td>

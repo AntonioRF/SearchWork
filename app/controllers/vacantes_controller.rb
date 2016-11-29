@@ -1,5 +1,6 @@
 class VacantesController < ApplicationController
   before_action :set_vacante, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_company!
 
   # GET /vacantes
   # GET /vacantes.json
@@ -24,7 +25,7 @@ class VacantesController < ApplicationController
   # POST /vacantes
   # POST /vacantes.json
   def create
-    @vacante = Vacante.new(vacante_params)
+    @vacante = current_company.vacantes.new(vacante_params)
 
     respond_to do |format|
       if @vacante.save

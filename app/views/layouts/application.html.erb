@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>DIF</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="teal white-text" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to "Bacantes", root_path, {class: "white-text"} %></li>
+        
+        <% if current_student %>
+          <% else %>
+          <% if current_company %>
+          <li><%= link_to 'Salir', destroy_company_session_path, method: :delete, :class =>"white-text" %></li>
+          <% else %>
+          <li><%= link_to ' Soy Empresa', new_company_session_path, {class: "white-text"} %></li>
+          <% end %>
+          <% end %>
 
-<%= yield %>
+
+        <% if current_company %>
+        <% else %>
+        <% if current_student %>
+        <li><%= link_to 'Salir', destroy_student_session_path, method: :delete, :class =>"white-text" %></li>
+        <% else %>
+        <li><%= link_to 'Soy Estudiante', new_student_session_path, {class: "white-text"} %></li>
+        <% end %>
+        <% end %>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Bacantes</a></li>
+        <li><a href="#">Soy Empresa</a></li>
+        <li><a href="#">Soy Estudiante</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons white-text">menu</i></a>
+    </div>
+  </nav>
+
+  <%= yield %>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Sobre Nosotros</h5>
+          <p class="grey-text text-lighten-4">Somos politecnicos, escomios de corazón. Apacionados por el desarrollo, amamos la Web y las buenas tendencias. Y las buenas canchas</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Navegación</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Bacantes</a></li>
+            <li><a class="white-text" href="#!">Login Estudiantes</a></li>
+            <li><a class="white-text" href="#!">Login Empresas</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Síguenos</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Facebook</a></li>
+            <li><a class="white-text" href="#!">Twitter</a></li>
+            <li><a class="white-text" href="#!">Git Hub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="#">AntonioRF</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
