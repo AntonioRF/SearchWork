@@ -3,5 +3,6 @@ class InicioController < ApplicationController
   end
 
   def vacante
+  	@vacante = Vacante.all
   end
 end

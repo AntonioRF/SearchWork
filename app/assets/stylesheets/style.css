@@ -3,6 +3,12 @@ nav .brand-logo {
   color: #444;
 }
 
+.wrapper{
+  max-width: 1080px !important;
+  width: 80% !important;
+  margin: 0 auto;
+}
+
 p {
   line-height: 2rem;
 }

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :students
   devise_for :companies
-  get 'inicio/home'
 
   get 'inicio/vacante'
 

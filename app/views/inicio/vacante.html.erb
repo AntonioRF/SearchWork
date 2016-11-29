@@ -1,2 +1,20 @@
-<h1>Inicio#vacante</h1>
-<p>Find me in app/views/inicio/vacante.html.erb</p>
+<div class="wrapper">
+	<% @vacante.each do |v| %>
+		<div class="col s12 m7">
+	    <h2 class="header"><%= v.title %></h2>
+	    <h2 class="header"><%= v.company.name %></h2>
+	    <div class="card horizontal">
+	      <div class="card-stacked">
+	        <div class="card-content">
+	          <p><%= v.description %></p>
+	          <p>Salario: <%= v.salary %></p>
+	          <p>Dirección: <%= v.address %></p>
+	        </div>
+	        <div class="card-action">
+	          <a href="#">This is a link</a>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	<% end %>
+</div>

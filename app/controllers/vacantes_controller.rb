@@ -5,12 +5,13 @@ class VacantesController < ApplicationController
   # GET /vacantes
   # GET /vacantes.json
   def index
-    @vacantes = Vacante.all
+    @vacantes = current_company.vacantes
   end
 
   # GET /vacantes/1
   # GET /vacantes/1.json
   def show
+
   end
 
   # GET /vacantes/new
