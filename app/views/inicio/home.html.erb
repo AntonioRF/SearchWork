@@ -1,6 +1,7 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
+<div style="<%= "display:none;" if alert.nil? && notice.nil? %>">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
 
 <div id="index-banner" class="parallax-container">
 <div class="section no-pad-bot">
