@@ -1,6 +1,6 @@
 class VacantesController < ApplicationController
   before_action :set_vacante, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_company!
+  before_action :authenticate_company!, except: [:destroy]
 
   # GET /vacantes
   # GET /vacantes.json
@@ -30,7 +30,7 @@ class VacantesController < ApplicationController
 
     respond_to do |format|
       if @vacante.save
-        format.html { redirect_to @vacante, notice: 'Vacante was successfully created.' }
+        format.html { redirect_to inicio_vacante_path, notice: 'La Vacante a sido eliminada' }
         format.json { render :show, status: :created, location: @vacante }
       else
         format.html { render :new }

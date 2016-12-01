@@ -2,13 +2,6 @@ nav ul a,
 nav .brand-logo {
   color: #444;
 }
-
-.wrapper{
-  max-width: 1080px !important;
-  width: 80% !important;
-  margin: 0 auto;
-}
-
 p {
   line-height: 2rem;
 }
@@ -61,4 +54,46 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+/* ========= Estilos personales ======== */
+body{
+  background: #fcfcfc;
+}
+.datos{
+  line-height: 1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.font-35{
+  font-size: 35px;
+}
+.tarjeta-atras{
+  font-size: 12px;
+}
+.wrapper{
+  max-width: 1080px;
+  width: 80%;
+  margin: 0 auto;
+}
+.vacantes__flex{
+  padding-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width : 992px) {
+  .card{
+    width: 32% !important;
+  }
+}
+@media only screen and (min-width : 600px) {
+  .card{
+    width: 48%;
+  }
+}
+@media only screen and (max-width : 650px) {
+  .header-height {
+    height: 125px;
+  }
 }

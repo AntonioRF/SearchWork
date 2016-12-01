@@ -40,8 +40,14 @@
     <%= f.text_field :schedule %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <% categorias = {'Web' => 'Web', 'Ventas' => 'Ventas', 'Programación' => 'Programación'} %>
+    <fieldset>
+      <% lista = categorias.sort %>
+      <% lista.each do |categoria| %>
+        <%= f.radio_button :category, categoria[1] %>
+        <label for="<%= categoria[1] %>"><%=categoria[0]%></label>
+        <%end%>
+    </fieldset>
   </div>
   <div class="actions">
     <%= f.submit %>

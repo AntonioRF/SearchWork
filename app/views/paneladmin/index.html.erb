@@ -1,0 +1,7 @@
+<% @vacantes.each do |v| %>
+	<p><%= v.title %></p>
+	<p><%= v.address %></p>
+	<p><%= v.salary %></p>
+	<p><%= v.category %></p>
+	<%= link_to("Destroy", v, :controller => "paneladmin", :method => :delete, :confirm => "Are you sure?") %>
+<% end %>

@@ -1,0 +1,30 @@
+%nav.top-nav.center.header.header-height 
+	%a.page-title.font-35{:href => ""} Las mejores vacantes para estudiantes!
+.wrapper
+	.vacantes__flex
+		- @vacante.each do |v|
+			.card
+				.card-image.waves-effect.waves-block.waves-light
+					=image_tag "office.jpg", class: "activator"
+				.card-content
+					%span.card-title.activator.grey-text.text-darken-4
+						=v.title
+						%i.material-icons.right
+							more_vert
+					%p.datos
+						=v.address
+					%p.datos
+						=v.salary
+					%p.datos
+						=v.schedule
+					%p
+						%a{:href => ""} Aplicar para el trabajo
+				.card-reveal
+					%span.card-title.grey-text.text-darken-4 
+						%i.material-icons.right close
+						%p.datos.tarjeta-atras
+							= v.requirements
+						%p.datos.tarjeta-atras
+							= v.benefits
+						%p.datos.tarjeta-atras
+							= v.description

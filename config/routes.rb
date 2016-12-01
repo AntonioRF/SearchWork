@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :administrators
   devise_for :students
   devise_for :companies
 
   get 'inicio/vacante'
 
   resources :vacantes
+
+  resources :paneladmin, only: [:index, :show, :destroy]
+
+  # resources :paneladmin
+  #get 'paneladmin/index'
+  #delete 'paneladmin/:id'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
