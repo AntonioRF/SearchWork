@@ -9,13 +9,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav class="teal white-text" role="navigation">
+  <div style="<%= "display:none;" if alert.nil? && notice.nil? %>">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+	<nav class="teal white-text logo-space" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <a id="logo-container" href="#" class="brand-logo"><%= image_tag "DoItFast.png", class: "logo" %></a>
       <ul class="right hide-on-med-and-down">
-        <li><%= link_to "Bacantes", inicio_vacante_path, {class: "white-text"} %></li>
+        <li><%= link_to "Vacantes", inicio_vacante_path, {class: "white-text"} %></li>
         
         <% if current_student %>
+          <li>
+            <%= link_to "Ver Perfil", edit_student_registration_path, {class: "white-text"} %>
+          </li>
           <% else %>
           <% if current_company %>
           <li><%= link_to 'Salir', destroy_company_session_path, method: :delete, :class =>"white-text" %></li>
@@ -51,22 +58,21 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Sobre Nosotros</h5>
-          <p class="grey-text text-lighten-4">Somos politecnicos, escomios de corazón. Apacionados por el desarrollo, amamos la Web y las buenas tendencias. Y las buenas canchas</p>
+          <p class="grey-text text-lighten-4">Somos politecnicos, escomios de corazón. Apacionados por el desarrollo, amamos la Web y las buenas tendencias y las buenas canchas.</p>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Navegación</h5>
           <ul>
-            <li><a class="white-text" href="#!">Bacantes</a></li>
-            <li><a class="white-text" href="#!">Login Estudiantes</a></li>
-            <li><a class="white-text" href="#!">Login Empresas</a></li>
+            <li><%= link_to "Vacantes", inicio_vacante_path, class: "white-text" %></li>
+            <li><%= link_to "Login Estudiantes", new_student_session_path, class: "white-text" %></li>
+            <li><%= link_to "Login Empresas", new_company_session_path, class: "white-text" %></li>
           </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Síguenos</h5>
           <ul>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">Twitter</a></li>
-            <li><a class="white-text" href="#!">Git Hub</a></li>
+            <li><a class="white-text" href="https://www.facebook.com/tono.ricardo" target="_blank">Facebook</a></li>
+            <li><a class="white-text" href="https://github.com/AntonioRF/" target="_blank">Git Hub</a></li>
           </ul>
         </div>
       </div>
