@@ -12,44 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title,'Título' %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
+    <%= f.label :address,'Dirección' %><br>
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :salary %><br>
+    <%= f.label :salary,'Sueldo Ofrecido' %><br>
     <%= f.text_field :salary %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description,'Descripción' %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :requirements %><br>
+    <%= f.label :requirements,'Requisitos' %><br>
     <%= f.text_area :requirements %>
   </div>
   <div class="field">
-    <%= f.label :benefits %><br>
+    <%= f.label :benefits,'Beneficios' %><br>
     <%= f.text_area :benefits %>
   </div>
   <div class="field">
-    <%= f.label :schedule %><br>
+    <%= f.label :schedule,'Horario' %><br>
     <%= f.text_field :schedule %>
   </div>
   <div class="field">
-    <% categorias = {'Web' => 'Web', 'Ventas' => 'Ventas', 'Programación' => 'Programación'} %>
-    <fieldset>
-      <% lista = categorias.sort %>
-      <% lista.each do |categoria| %>
-        <%= f.radio_button :category, categoria[1] %>
-        <label for="<%= categoria[1] %>"><%=categoria[0]%></label>
-        <%end%>
-    </fieldset>
+    <%= f.radio_button :category, 'Web' %> 
+    <%= f.label :category, 'Web', :value => 'Web' %>
+    <%= f.radio_button :category, 'Ventas' %>
+    <%= f.label :category, 'Ventas', :value => 'Ventas' %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="actions flex-center">
+    <%= f.submit "Crear Vacante", class: "waves-effect waves-light btn"%>
   </div>
 <% end %>

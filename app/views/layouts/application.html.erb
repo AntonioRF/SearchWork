@@ -15,13 +15,16 @@
   </div>
 	<nav class="teal white-text logo-space" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"><%= image_tag "DoItFast.png", class: "logo" %></a>
+      <%=link_to (image_tag "DoItFast.png", class: "logo"), root_path %>
       <ul class="right hide-on-med-and-down">
-        <li><%= link_to "Vacantes", inicio_vacante_path, {class: "white-text"} %></li>
+        
         
         <% if current_student %>
           <li>
             <%= link_to "Ver Perfil", edit_student_registration_path, {class: "white-text"} %>
+          </li>
+          <li>
+            <%= link_to "Vacantes", inicio_vacante_path, {class: "white-text"} %>   
           </li>
           <% else %>
           <% if current_company %>
@@ -29,25 +32,31 @@
           <% else %>
           <li><%= link_to ' Soy Empresa', new_company_session_path, {class: "white-text"} %></li>
           <% end %>
-          <% end %>
+        <% end %>
 
 
         <% if current_company %>
-        <% else %>
-        <% if current_student %>
-        <li><%= link_to 'Salir', destroy_student_session_path, method: :delete, :class =>"white-text" %></li>
-        <% else %>
-        <li><%= link_to 'Soy Estudiante', new_student_session_path, {class: "white-text"} %></li>
-        <% end %>
+          <li>
+            <%= link_to "Ver Perfil", edit_company_registration_path, {class: "white-text"} %>
+          </li>
+          <li>
+            <%= link_to "Crear Vacante", new_vacante_path, {class: "white-text"} %>
+          </li>
+          <% else %>
+          <% if current_student %>
+          <li><%= link_to 'Salir', destroy_student_session_path, method: :delete, :class =>"white-text" %></li>
+          <% else %>
+          <li><%= link_to 'Soy Estudiante', new_student_session_path, {class: "white-text"} %></li>
+          <% end %>
         <% end %>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Bacantes</a></li>
+        <li><a href="#">Vacantes</a></li>
         <li><a href="#">Soy Empresa</a></li>
         <li><a href="#">Soy Estudiante</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons white-text">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons white-text">Menú</i></a>
     </div>
   </nav>
 
@@ -58,7 +67,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Sobre Nosotros</h5>
-          <p class="grey-text text-lighten-4">Somos politecnicos, escomios de corazón. Apacionados por el desarrollo, amamos la Web y las buenas tendencias y las buenas canchas.</p>
+          <p class="grey-text text-lighten-4">Somos politecnicos, escomios de corazón. Apasionados por el desarrollo, amamos la Web, las buenas tendencias y las buenas canchas.</p>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Navegación</h5>

@@ -7,14 +7,20 @@
 				.card-image.waves-effect.waves-block.waves-light
 					=image_tag "office.jpg", class: "activator"
 				.card-content
+					%h6 Categoría
+					%span.card-title.activator.grey-text.text-darken-4
+						=v.category
+					%br
 					%span.card-title.activator.grey-text.text-darken-4
 						=v.title
 						%i.material-icons.right
 							more_vert
 					%p.datos
 						=v.address
+					%h5 Sueldo
 					%p.datos
 						=v.salary
+					%h5 Horario
 					%p.datos
 						=v.schedule
 					%p
