@@ -64,6 +64,12 @@ body{
   line-height: 1rem !important;
   margin-bottom: 0.5rem !important;
 }
+.card h5{
+  font-size: 20px;
+}
+.card p{
+  font-size: 14px;
+}
 .flex-center{
   display: flex;
   justify-content: center;
@@ -81,6 +87,9 @@ body{
 nav .button-collapse i {
   line-height: 80px !important;
 }
+.sin-espacio{
+  line-height: 20px !important;
+}
 .tarjeta-atras{
   font-size: 12px;
 }
@@ -94,7 +103,7 @@ nav .button-collapse i {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
 @media only screen and (min-width : 992px) {
   .card{

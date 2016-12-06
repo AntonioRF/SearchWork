@@ -7,16 +7,15 @@
 				.card-image.waves-effect.waves-block.waves-light
 					=image_tag "office.jpg", class: "activator"
 				.card-content
-					%h6 Categoría
 					%span.card-title.activator.grey-text.text-darken-4
-						=v.category
-					%br
-					%span.card-title.activator.grey-text.text-darken-4
-						=v.title
+						%h5{class: "sin-espacio"}= v.title
 						%i.material-icons.right
 							more_vert
 					%p.datos
 						=v.address
+					%h5 Categoría
+					%p.datos
+						=v.category
 					%h5 Sueldo
 					%p.datos
 						=v.salary
@@ -30,10 +29,10 @@
 						%i.material-icons.right close
 						%h5 Requisitos
 						%p.datos.tarjeta-atras
-							= v.requirements
+							= v.requirements.html_safe
 						%h5 Beneficios
 						%p.datos.tarjeta-atras
-							= v.benefits
+							= v.benefits.html_safe
 						%h5 Descripción
 						%p.datos.tarjeta-atras
-							= v.description
+							= v.description.html_safe

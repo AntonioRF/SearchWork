@@ -30,7 +30,7 @@ class VacantesController < ApplicationController
 
     respond_to do |format|
       if @vacante.save
-        format.html { redirect_to inicio_vacante_path, notice: 'La Vacante a sido eliminada' }
+        format.html { redirect_to vacantes_path, notice: 'La Vacante a sido eliminada' }
         format.json { render :show, status: :created, location: @vacante }
       else
         format.html { render :new }
